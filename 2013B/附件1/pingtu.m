@@ -18,5 +18,5 @@ for i=2:19
     img(:,i*72-71:i*72)=img0(:,now*72-71:now*72);
 end
 image(img);
-colormap(cmap);
+colormap(cmap0(:,1:3));
 %abcdefghijklmnopqrstuvwxyz

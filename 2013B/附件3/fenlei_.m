@@ -29,11 +29,11 @@ for i=1:num
     biaozhun(i)=b;
 end
 %特殊的处理
-biaozhun(30)=biaozhun(30)-69;
+biaozhun(30)=biaozhun(30)-68;
 biaozhun(59)=biaozhun(59)+18;
-biaozhun(90)=biaozhun(90)-69;
-biaozhun(72)=biaozhun(72)-69;
-biaozhun(15)=biaozhun(15)-69;
+biaozhun(90)=biaozhun(90)-68;
+biaozhun(72)=biaozhun(72)-68;
+biaozhun(15)=biaozhun(15)-68;
 
 biaozhunpaixu=sort(biaozhun);
 fenlei=zeros(11,19);

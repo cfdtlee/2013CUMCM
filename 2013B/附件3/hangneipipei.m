@@ -1,5 +1,6 @@
 num=19;
-sign=[169	101	77	63	143	31	42	24	148	192	51	180	121	87	196	27	2	88	19];
+sign=[72	18	28	34	61	16	81	84	86	133	134	153	157	166	171	199	201	203	206
+];
 for i=1:num  %∂¡»°À˘”–ÀÈ÷Ω∆¨
     if sign(i)<11
         [img0(:,i*72-71:i*72),cmap0(:,i*3-2:i*3)]=imread(strcat('00',num2str(sign(i)-1)),'bmp');
@@ -16,9 +17,7 @@ for i=1:19
         deta255(i,j)=sum(abs(img1(:,i*72)-img1(:,j*72-71)));
     end
 end
-%deta255(7,12)=inf;deta255(6,12)=inf;deta255(7,2)=inf;
-%deta255(15,17)=inf;deta255(15,5)=inf;deta255(15,16)=inf;
-deta255(3,17)=inf;deta255(3,18)=inf;deta255(16,18)=inf;
+%deta255(13,7)=inf;deta255(13,6)=inf;deta255(8,7)=inf;
 now=1;
 img(:,1:72)=img0(:,now*72-71:now*72);
 shunxu(1)=sign(now);
