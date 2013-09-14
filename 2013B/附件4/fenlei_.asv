@@ -1,4 +1,4 @@
-%gezhangtouying;
+gezhangtouying;
 %寻找第一个完整行的下边界作为分类依据
 %计算第一个完整行的高度，分为三类:小字母[23,25] 一头或一尾或大写[34,39] [47,52]
 biaozhun=zeros(209,1);
@@ -32,7 +32,7 @@ end
 biaozhun(74)=biaozhun(74)-12+14;
 biaozhun(93)=biaozhun(93)-11;
 biaozhun(105)=biaozhun(105)-11;
-biaozhun(173)=89;
+biaozhun(173)=89;%逗号
 biaozhun(95)=86;%逗号
 %[0 2 22 25 33 34 62 40 74 102 110 113 140 151 167 169 173 201 208]-14
 %!!73-12 104-11 92-11
@@ -41,16 +41,26 @@ biaozhun(95)=86;%逗号
 diyipian=zeros(1,11);
 k=1;
 for i=1:209
-    if(sum(sum(img0(:,i*72-71:i*72-67)))==255*180*5)
+    if(sum(sum(img0(:,i*72-71:i*72-60)))==255*180*12)
         diyipian(k)=i;
         k=k+1;
     end
 end
-fenlei=zeros(11,40);
 
-temp=find(biaozhun>=30 & biaozhun<=36);
-[m,n]=size(temp);
-fenlei(1,1:m)=temp;
+%计算每块第一块黑色区域的下边界
+%65为行间距
+for i=1:209
+    if(biaozhun(i)~=65 & biaozhun(i)~=66)
+        biaozhun(i)=biaozhun(i)-65*floor(biaozhun(i)/65);
+    end
+end
+
+
+fenlei=zeros(11,19);
+for i=1:11
+    fenlei(i,:)=find(biaozhun<=biaozhunpaixu(i*19) & biaozhun>=biaozhunpaixu(i*19-18));
+end
+
 
 biaozhunpaixu=sort(biaozhun);
 
