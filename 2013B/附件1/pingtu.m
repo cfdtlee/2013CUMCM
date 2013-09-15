@@ -19,4 +19,12 @@ for i=2:19
 end
 image(img);
 colormap(cmap0(:,1:3));
-%abcdefghijklmnopqrstuvwxyz
+hold on
+num=19
+for i=1:num
+    text((i-1)*72,1980,int2str(now_temp(i)-1));
+end
+for i=1:num
+    plot([72*i-1,72*i-1],[0,1980])
+end
+axis off

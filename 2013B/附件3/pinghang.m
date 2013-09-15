@@ -42,14 +42,19 @@ image(img0);
 colormap(cmap0(1:256,1:3));
 touying=zeros(1980,1);
 touying(find(sum(img0,2)==1368*255))=255;
-
-
+hold on
+axis off
+for i=1:11
+plot([0 1368],[i*180 i*180])
+end
 for i=1:180
     for j=1:11
         touying1(i,j)=touying((j-1)*180+i);
     end
 end
-
+for i=1:19
+plot([i*72 i*72],[0 1980])
+end
 
 
 %{
