@@ -1,6 +1,5 @@
 num=19;
-sign=[50	12	23	29	3	55	58	66	92	96	119	130	142	144	179	187	189	191	193				
-];
+sign=hang(i);
 for i=1:num  %读取所有碎纸片
     if sign(i)<11
         [img0(:,i*72-71:i*72),cmap0(:,i*3-2:i*3)]=imread(strcat('00',num2str(sign(i)-1)),'bmp');
@@ -13,7 +12,7 @@ end
 img1=im2double(img0)*255;
 
 for i=1:19
-    for j=1:19 %deta255(i,j)i的右侧和j的左侧
+    for j=1:19 %deta255(i,j)i的右侧和j的左侧的M距离
         deta255(i,j)=sum(abs(img1(:,i*72)-img1(:,j*72-71)));
     end
 end
